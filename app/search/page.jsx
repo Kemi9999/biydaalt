@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 
-const products = [
+const p = [
     { id: '1', title: 'Acme Keyboard', handle: 'acme-mechanical-keyboard', price: '150.00', image: 'https://cdn.shopify.com/s/files/1/0754/3727/7491/files/keyboard.png?v=1690003507', alt: 'Acme Keyboard' },
     { id: '2', title: 'Acme T-Shirt', handle: 'acme-t-shirt', price: '20.00', image: 'https://cdn.shopify.com/s/files/1/0754/3727/7491/files/t-shirt-color-black.png?v=1690003675', alt: 'Acme T-Shirt' },
     { id: '3', title: 'Acme Hoodie', handle: 'acme-hoodie', price: '50.00', image: 'https://cdn.shopify.com/s/files/1/0754/3727/7491/files/hoodie-1.png?v=1690003482', alt: 'Acme Hoodie' },
@@ -27,14 +27,14 @@ const collections = ['All', 'Bags', 'Drinkware', 'Electronics', 'Footware', 'Hea
 const sortOptions = ['Relevance', 'Trending', 'Latest arrivals', 'Price: Low to high', 'Price: High to low'];
 
 export default function AllProducts() {
-    const [filteredProducts, setFilteredProducts] = useState(products);
+    const [filteredProducts, setFilteredProducts] = useState(p);
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedCollection, setSelectedCollection] = useState('All');
     const [selectedSort, setSelectedSort] = useState('Relevance');
     const [cartCount, setCartCount] = useState(0);
 
     useEffect(() => {
-        let filtered = [...products];
+        let filtered = [...p];
         if (searchQuery) {
             filtered = filtered.filter(product =>
                 product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -63,10 +63,10 @@ export default function AllProducts() {
 
     return (
         <>
-            <Head>
+            <div>
                 <title>Acme Store - All Products</title>
                 <meta name="description" content="Browse all products at Acme Store" />
-            </Head>
+            </div>
             <div className="bg-neutral-50 text-black selection:bg-teal-300 dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white min-h-screen">
                 <nav className="relative flex items-center justify-between p-4 lg:px-6">
                     <div className="block flex-none md:hidden">

@@ -85,16 +85,16 @@ export default function ProductPage() {
   ];
 
   const handlePrevImage = () => {
-    setSelectedImage((prev) => (prev === 0 ? productImages.length - 1 : prev - 1));
+    setSelectedImg((prev) => (prev === 0 ? productImages.length - 1 : prev - 1));
   };
 
   const handleNextImage = () => {
-    setSelectedImage((prev) => (prev === productImages.length - 1 ? 0 : prev + 1));
+    setSelectedImg((prev) => (prev === productImages.length - 1 ? 0 : prev + 1));
   };
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Header */}
+  
       <nav className="relative flex items-center justify-between p-4 lg:px-6">
         <div className="block flex-none md:hidden">
           <button 
@@ -169,12 +169,12 @@ export default function ProductPage() {
         </div>
       </nav>
 
-      {/* Product Detail Section */}
+
       <main className="mx-auto max-w-screen-2xl px-4">
         <div className="flex flex-col rounded-lg border border-neutral-200 bg-white p-8 md:p-12 lg:flex-row lg:gap-8 dark:border-neutral-800 dark:bg-black">
-          {/* Left Side - Images */}
+     
           <div className="h-full w-full basis-full lg:basis-4/6">
-            {/* Main Image */}
+           
             <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden">
               <img 
                 alt="Acme Circles T-Shirt"
@@ -204,6 +204,7 @@ export default function ProductPage() {
               </div>
             </div>
 
+        
             <ul className="my-12 flex items-center flex-wrap justify-center gap-2 overflow-auto py-1 lg:mb-0">
               {productImages.map((image, index) => (
                 <li key={index} className="h-20 w-20">
@@ -225,7 +226,6 @@ export default function ProductPage() {
             </ul>
           </div>
 
-          {/* Right Side - Product Info */}
           <div className="basis-full lg:basis-2/6">
             <div className="mb-6 flex flex-col border-b pb-6 dark:border-neutral-700">
               <h1 className="mb-2 text-5xl font-medium">Acme Circles T-Shirt</h1>
@@ -234,7 +234,7 @@ export default function ProductPage() {
               </div>
             </div>
 
-            {/* Color Options */}
+
             <dl className="mb-8">
               <dt className="mb-4 text-sm uppercase tracking-wide">Color</dt>
               <dd className="flex flex-wrap gap-3">
@@ -260,7 +260,7 @@ export default function ProductPage() {
               </dd>
             </dl>
 
-       
+      
             <dl className="mb-8">
               <dt className="mb-4 text-sm uppercase tracking-wide">Size</dt>
               <dd className="flex flex-wrap gap-3">
@@ -281,11 +281,12 @@ export default function ProductPage() {
               </dd>
             </dl>
 
-      
+            {/* Product Description */}
             <div className="prose mx-auto max-w-6xl text-base leading-7 text-black prose-headings:mt-8 prose-headings:font-semibold prose-headings:tracking-wide prose-headings:text-black prose-h1:text-5xl prose-h2:text-4xl prose-h3:text-3xl prose-h4:text-2xl prose-h5:text-xl prose-h6:text-lg prose-a:text-black prose-a:underline hover:prose-a:text-neutral-300 prose-strong:text-black prose-ol:mt-8 prose-ol:list-decimal prose-ol:pl-6 prose-ul:mt-8 prose-ul:list-disc prose-ul:pl-6 dark:text-white dark:prose-headings:text-white dark:prose-a:text-white dark:prose-strong:text-white mb-6 text-sm leading-tight dark:text-white/[60%]">
               60% combed ringspun cotton/40% polyester jersey tee.
             </div>
 
+            {/* Add to Cart Button */}
             <button
               disabled={!selectedSize}
               className={`relative flex w-full items-center justify-center rounded-full bg-blue-600 p-4 tracking-wide text-white ${
@@ -331,7 +332,7 @@ export default function ProductPage() {
         </div>
       </main>
 
-     
+    
       <footer className="text-sm text-neutral-500 dark:text-neutral-400">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 border-t border-neutral-200 px-6 py-12 text-sm md:flex-row md:gap-12 md:px-4 min-[1320px]:px-0 dark:border-neutral-700">
           <div>
